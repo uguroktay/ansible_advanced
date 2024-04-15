@@ -1,6 +1,0 @@
----
-# handlers file for ntp
-- name: restart chrony daemon
-  ansible.builtin.service:
-    name: chronyd
-    state: restarted
