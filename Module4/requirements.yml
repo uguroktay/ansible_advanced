@@ -1,0 +1,5 @@
+collections:
+  - name: community.general
+    source: https://galaxy.ansible.com
+  - name: f5.nginx
+    source: https://cloud.redhat.com/api/automation-hub/

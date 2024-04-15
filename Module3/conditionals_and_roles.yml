@@ -1,0 +1,13 @@
+- hosts: localhost
+  gather_facts: False
+  tasks:
+    - set_fact:
+        mode: true
+    - include_role:
+        name: included_role
+      when: mode == true
+    - set_fact:
+        mode: true
+    - import_role:
+        name: imported_role
+      when: mode == true

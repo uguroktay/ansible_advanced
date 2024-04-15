@@ -1,0 +1,6 @@
+---
+- name: deploy ntp on test machines
+  hosts: test
+  become: yes
+  roles:
+  - geerlingguy.ntp

@@ -1,0 +1,7 @@
+---
+- name: deploy ntp
+  hosts: test
+  become: yes
+  tasks:
+  - include_role:
+      name: ntp

@@ -1,0 +1,6 @@
+- hosts: test
+  tasks:
+  - name: compare version
+    template:
+      src: version.j2
+      dest: /tmp/version.txt

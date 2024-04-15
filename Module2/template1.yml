@@ -1,0 +1,6 @@
+- hosts: all
+  tasks:
+  - name: Ansible Template Example
+    template:
+      src: app_config.j2
+      dest: /tmp/app.conf
