@@ -1,0 +1,14 @@
+---
+- hosts: ios1
+  gather_facts: no
+  tasks:
+  - cisco.ios.ios_facts:
+      gather_subset:
+      - min
+      gather_network_resources:
+      - interfaces
+      - l3_interfaces
+      - acls
+  - name: debug interfaces facts
+    ansible.builtin.debug:
+      msg: "{{ ansible_facts.network_resources.l3_interfaces }}"

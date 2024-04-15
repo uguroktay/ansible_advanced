@@ -1,0 +1,52 @@
+acls_on_device:
+-   acls:
+    -   aces:
+        -   destination:
+                any: true
+                port_protocol:
+                    eq: telnet
+            grant: deny
+            protocol: tcp
+            sequence: 10
+            source:
+                any: true
+        -   destination:
+                any: true
+            grant: permit
+            protocol: ip
+            sequence: 20
+            source:
+                any: true
+        acl_type: extended
+        name: vtyacl
+    -   aces:
+        -   destination:
+                any: true
+                port_protocol:
+                    eq: www
+            grant: permit
+            protocol: tcp
+            sequence: 10
+            source:
+                address: 10.10.6.0
+                wildcard_bits: 0.0.0.255
+        -   destination:
+                any: true
+                port_protocol:
+                    eq: ntp
+            grant: permit
+            protocol: udp
+            sequence: 15
+            source:
+                address: 10.10.6.0
+                wildcard_bits: 0.0.0.255
+        -   destination:
+                any: true
+            grant: deny
+            protocol: ip
+            sequence: 20
+            source:
+                any: true
+        acl_type: extended
+        name: wan_acl
+    afi: ipv4

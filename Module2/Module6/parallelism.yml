@@ -1,0 +1,11 @@
+- name: parallelism demo
+  hosts: test
+  gather_facts: false
+  strategy: linear
+  tasks:
+    - command: "sleep {{ sleep_duration }}"
+      register: result
+      throttle: 1
+    - name: debug
+      debug:
+        msg: "{{ inventory_hostname }} task1 {{ result.start }} - {{ result.end }}"
