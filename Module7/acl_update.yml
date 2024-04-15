@@ -1,0 +1,8 @@
+---
+- hosts: ios1
+  gather_facts: no
+  tasks:
+  - name: override ACLs
+    cisco.ios.ios_acls:
+      config: "{{ acls_on_device }}"
+      state: overridden

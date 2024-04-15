@@ -1,0 +1,8 @@
+[ios]
+ios1 ansible_host=10.10.4.2 ansible_user=vagrant ansible_password=vagrant ansible_network_os=ios ansible_connection=network_cli
+ios2 ansible_host=10.10.5.2 ansible_user=vagrant ansible_password=vagrant ansible_port=22 ansible_network_os=ios ansible_connection=network_cli
+# ios3 ansible_host=64.103.37.51 ansible_user=admin01 ansible_password=admin01 ansible_become_pass=admin01 ansible_port=8181 ansible_network_os=ios ansible_connection=network_cli
+[linux]
+centos1 connection=local
+web1 ansible_host=10.10.1.2 ansible_user=vagrant ansible_password=vagrant ansible_python_interpreter=/usr/bin/python
+#web1 ansible_host=10.10.1.2 ansible_user=vagrant ansible_password=vagrant ansible_python_interpreter=/usr/bin/python

@@ -1,0 +1,13 @@
+---
+- hosts: ios1
+  gather_facts: no
+  tasks:
+  - name: retrieve ACL configuration
+    cisco.ios.ios_acls:
+      config:
+      state: gathered
+    register: acl_config
+  - name: save ACL config
+    ansible.builtin.copy:
+      content: "{{ {'acls_on_device' : acl_config.gathered} | to_nice_yaml }}"
+      dest: "host_vars/ios1/acls.yml"
