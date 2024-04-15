@@ -1,0 +1,8 @@
+---
+- name: deploy ntp
+  hosts: centos1:centos2
+  become: yes
+  strategy: free
+  tasks:
+  - include_role:
+      name: ntp
